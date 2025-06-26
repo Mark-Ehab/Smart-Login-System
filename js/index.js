@@ -61,9 +61,9 @@ function getFromLocalStorage(key) {
 # Check Which HTML Page (Document)[DOM] is Currently 
 # Rendered on the Browser (Window)[BOM]
 ---------------------------------------------------*/
-switch (window.location.pathname) {
-  case "/":
-  case "/index.html":
+switch (true) {
+  case /^.*\/$/.test(window.location.pathname):
+  case /^.*\/index.html$/.test(window.location.pathname):
     /*-------------------------------------------------- 
     # Global Scope Variables declarations and definition
     # of login page
@@ -162,7 +162,7 @@ switch (window.location.pathname) {
       event.preventDefault();
     });
     break;
-  case "/signup.html":
+  case /^.*\/signup.html$/.test(window.location.pathname):
     /*-------------------------------------------------- 
     # Global Scope Variables declarations and definition
     # of signup page
@@ -194,7 +194,7 @@ switch (window.location.pathname) {
     /* Object that holds all sign up page form input fields validation regex patterns */
     const signupInputValidationRegexPatterns = {
       username: /^[A-Za-z]\w{1,19}(\s[A-Za-z]\w{1,19})?$/,
-      useremail: /^[A-Za-z][^@\s]+@[a-z]{3,}\.[a-z]{3,}$/,
+      useremail: /^[A-Za-z][^@\s]*@[a-z]{3,}\.[a-z]{3,}$/,
       userpassword:
         /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
     };
@@ -392,8 +392,7 @@ switch (window.location.pathname) {
     });
 
     break;
-
-  case "/home.html":
+  case /^.*\/home.html$/.test(window.location.pathname):
     /*-------------------------------------------------- 
     # Global Scope Variables declarations and definition
     # of home page
