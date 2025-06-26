@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Site Meta Data -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Smart login system." />
+    <!-- Site Title -->
+    <title>Signup</title>
+    <!-- Link Favicon to Site Head -->
+    <link rel="icon" href="./image/login-registeration-system-icon.png" />
+    <!-- Link Bootsrtap External Styles -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <!-- Link Custom External Styles -->
+    <link rel="stylesheet" href="./CSS/main.css" />
+  </head>
+  <body>
+    <!-- Start of Main Section -->
+    <main id="signup-main" class="my-5 mx-auto p-5 w-75">
+      <div class="container">
+        <!-- Start of Header -->
+        <header>
+          <h1 class="text-capitalize text-center">smart login system</h1>
+        </header>
+        <!-- End of Header -->
+        <!-- Start of SignUp Form -->
+        <form>
+          <div class="row gy-3 m-0">
+            <div class="col-12">
+              <div class="inner">
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  name="username"
+                  class="form-control"
+                />
+                <span class="d-none text-danger mt-1"
+                  >* Username must be at least 2 characters, begin with a
+                  alphabetical character and cannot end with spaces</span
+                >
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="inner">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  name="useremail"
+                  class="form-control"
+                />
+                <span class="d-none text-danger mt-1"
+                  >* Email shall be as the following pattern:
+                  example@mail.com</span
+                >
+                <span class="d-none text-danger mt-1"
+                  >* This email is already registered</span
+                >
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="inner">
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  name="userpassword"
+                  class="form-control"
+                />
+                <span class="d-none text-danger mt-1"
+                  >* Password shall: <br />
+                  <ul>
+                    <li>Be at least 8 characters</li>
+                    <li>Contain at least 1 capital character</li>
+                    <li>Contain at least 1 special character</li>
+                    <li>Contain at least 1 small character</li>
+                    <li>Contain at least 1 number</li>
+                  </ul></span
+                >
+              </div>
+            </div>
+            <div id="signup-success-msg" class="col-12 d-none">
+              <div class="inner">
+                <span class="d-block text-center text-success mt-1"
+                  >Account is Created Successfully !</span
+                >
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="inner">
+                <button
+                  type="submit"
+                  class="btn btn-login-signup-custom text-capitalize w-100 my-3"
+                >
+                  Sign Up
+                </button>
+                <p class="text-white text-center">
+                  You have an account?
+                  <a href="index.html" class="text-white">Signin</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- End of SignUp Form -->
+      </div>
+    </main>
+    <!-- End of Main Section -->
+    <script src="./js/index.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

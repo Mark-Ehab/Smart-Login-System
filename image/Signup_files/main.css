@@ -1,0 +1,75 @@
+/*----------------------------------------- 
+# Custom Styles File for Login System App #
+------------------------------------------*/
+
+/*---------------------------------------- 
+# Definition of Custom Variables in root
+# Pseudo Class 
+------------------------------------------*/
+:root {
+  --bg-color: rgb(36, 53, 63);
+  --main-color: rgb(23, 162, 184);
+  --main-font-family: Helvetica, sans-serif;
+  --body-font-weight: 400;
+  --h1-font-weight: 500;
+  --login-form-input-fields-color: white;
+  --login-form-input-fields-bg-color: rgb(36, 53, 63);
+  --text-selection-color: rgb(23, 162, 184);
+  --text-selection-bg-color: rgb(53, 46, 40);
+  --placeholder-text-color: rgb(182, 182, 182);
+  --login-btn-hover-text-color: white;
+}
+/*----------------------------------------- 
+# General Styles 
+------------------------------------------*/
+::selection {
+  background-color: var(--text-selection-color);
+  color: var(--text-selection-bg-color);
+}
+::placeholder {
+  color: var(--placeholder-text-color) !important;
+}
+body {
+  background-color: var(--bg-color);
+  font-family: var(--main-font-family);
+  font-size: 1rem;
+}
+h1 {
+  color: var(--main-color);
+  font-size: 2.5rem;
+  font-weight: var(--h1-font-weight);
+}
+.form-control {
+  --bs-body-color: var(--login-form-input-fields-color);
+  --bs-body-bg: var(--login-form-input-fields-bg-color);
+  --bs-border-radius: 0.25rem;
+}
+.form-control:focus {
+  --bs-border-color: var(--main-color);
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+.btn-login-custom {
+  --bs-btn-color: var(--main-color);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--main-color);
+  --bs-btn-hover-border-color: var(--main-color);
+  --bs-btn-hover-color: var(--login-btn-hover-text-color);
+  --bs-btn-hover-bg: var(--main-color);
+}
+.btn-login-custom + p > a {
+  text-decoration: none;
+  transition: 0.5s text-decoration-line;
+}
+.btn-login-custom + p > a:hover {
+  text-decoration-line: underline;
+}
+
+/*----------------------------------------- 
+# Login main Section Styles  
+------------------------------------------*/
+#login-main,
+#signup-main {
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+  max-width: 52.0313rem;
+}

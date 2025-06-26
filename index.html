@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Site Meta Data -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Smart login system." />
+    <!-- Site Title -->
+    <title>Login</title>
+    <!-- Link Favicon to Site Head -->
+    <link rel="icon" href="./image/login-registeration-system-icon.png" />
+    <!-- Link Bootsrtap External Styles -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <!-- Link Custom External Styles -->
+    <link rel="stylesheet" href="./CSS/main.css" />
+  </head>
+  <body>
+    <!-- Start of Main Section -->
+    <main id="login-main" class="my-5 mx-auto p-5 w-75">
+      <div class="container">
+        <!-- Start of Header -->
+        <header>
+          <h1 class="text-capitalize text-center">smart login system</h1>
+        </header>
+        <!-- End of Header -->
+        <!-- Start of Login Form -->
+        <form>
+          <div class="row gy-3 m-0">
+            <div class="col-12">
+              <div class="inner">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  name="useremail"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="inner">
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  name="userpassword"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="inner">
+                <button
+                  type="submit"
+                  class="btn btn-login-signup-custom text-capitalize w-100 my-3"
+                >
+                  login
+                </button>
+                <p class="text-white text-center">
+                  Don’t have an account?
+                  <a href="signup.html" class="text-white">Sign Up</a>
+                </p>
+              </div>
+            </div>
+            <div id="login-welcome-msg" class="col-12 d-none">
+              <div class="inner">
+                <span class="d-block text-center text-success mt-1"
+                  >Welcome Back !</span
+                >
+              </div>
+            </div>
+            <div id="login-err-msg" class="col-12 d-none">
+              <div class="inner">
+                <span class="d-block text-center text-danger mt-1"
+                  >Incorrect Email or Password, Please Try Again</span
+                >
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- End of Login Form -->
+      </div>
+    </main>
+    <!-- End of Main Section -->
+    <script src="./js/index.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
