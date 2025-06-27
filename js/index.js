@@ -14,8 +14,8 @@
 let registeredUserAccountsList = [];
 /* Variable to hold list of user accounts key in local storage */
 const listOfUserAccountsKey = "list of user accounts";
-/* Variable to hold logged in username key in local storage */
-const usernameKey = "logged username key";
+/* Variable to hold logged in user key in local storage */
+const loggedUserKey = "Logged user key";
 
 /*--------------------------------------- 
 # App Entry Point
@@ -85,6 +85,16 @@ switch (true) {
     const welcomeMsg = document.querySelector("#login-welcome-msg");
     /* Variable to hold column tag at which login error message is displayed selected from the DOM*/
     const errMsg = document.querySelector("#login-err-msg");
+
+    /* =============================================================================== */
+
+    /*--------------------------------------- 
+    # Login Page Entry Point
+    ----------------------------------------*/
+
+    /* Reset current logged-in user value on local storage */
+    updateLocalStorage(loggedUserKey, "");
+
     /* =============================================================================== */
 
     /*--------------------------------------- 
@@ -120,10 +130,10 @@ switch (true) {
       /* Get the username of the user in case of successful login */
       if (isValid) {
         updateLocalStorage(
-          usernameKey,
+          loggedUserKey,
           registeredUserAccountsList.find(
             (user) => loginPageEmailInputField.value === user.useremail
-          ).username
+          )
         );
       }
 
@@ -400,21 +410,37 @@ switch (true) {
     /**************************Home Page Components Variables**************************/
     /* Variable to hold home page heading 1 tag selected from the DOM */
     const homePageHeading1 = document.querySelector("#home-main section h1");
-    /* Variable to hold home page logout button tag selected from the DOM */
-    const logoutBtn = document.querySelector("#navbar > div > button");
 
     /**************************Home Page General Variables**************************/
-    /* Variable to hold username to be displayed on home page after successful login */
-    let username;
+    /* Variable to hold successfully logged-in user whose username to be displayed on home page */
+    let loggedUser;
+
+    /* =============================================================================== */
 
     /*--------------------------------------- 
     # Home Page Entry Point
     ----------------------------------------*/
-    /* Get username of user who successfully logged in from local storage */
-    username = getFromLocalStorage(usernameKey);
+    /* Get user who successfully logged in from local storage */
+    loggedUser = JSON.parse(getFromLocalStorage(loggedUserKey));
 
-    /* Display this username on heading1 of home page */
-    displayUserName();
+    /* Check if user got from database is already registered on the system or not */
+    if (
+      registeredUserAccountsList.find(
+        (user) => loggedUser.useremail === user.useremail
+      )
+    ) {
+      /* Show home page */
+      document.querySelector("body").classList.toggle("d-none");
+
+      /* Display this username on heading1 of home page */
+      displayUserName();
+
+      /* Reset logged user */
+      loggedUser = null;
+    } else {
+      /* Redirect to login page if current user is not registered on the system */
+      window.location.href = "./index.html";
+    }
 
     /* =============================================================================== */
 
@@ -431,7 +457,7 @@ switch (true) {
     # return type: void
     -----------------------------------------------------------------------------*/
     function displayUserName() {
-      homePageHeading1.innerHTML = `Welcome ${username}`;
+      homePageHeading1.innerHTML = `Welcome ${loggedUser.username}`;
     }
 
     break;
