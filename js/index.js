@@ -13,7 +13,7 @@
 /* Array to hold all registered user accounts */
 let registeredUserAccountsList = [];
 /* Variable to hold list of user accounts key in local storage */
-const listOfUserAccountsKey = "list of user accounts";
+const listOfUserAccountsKey = "List of user accounts";
 /* Variable to hold logged in user key in local storage */
 const loggedUserKey = "Logged user key";
 
@@ -346,8 +346,6 @@ switch (true) {
 
       /* Update local storage with new user account */
       updateLocalStorage(listOfUserAccountsKey, registeredUserAccountsList);
-
-      console.log(registeredUserAccountsList);
     }
 
     /* =============================================================================== */
